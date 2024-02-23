@@ -1,9 +1,8 @@
 const express = require("express");
-const APIController = require("../controller/api.js");
-const ScrapeController = require("../controller/scrape.js");
+const SearchController = require("../controller/search.js");
 const routes = express.Router();
 
-routes.post("/", APIController.getCountJobs);
-routes.post("/scrape", ScrapeController.scrape);
+// routes.post("/", APIController.getCountJobs);
+routes.get("/", SearchController.search);
 
 module.exports = routes;
