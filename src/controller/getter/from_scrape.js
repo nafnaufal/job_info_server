@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer")
 
-const getFromScrape = async (q, location, data) => {
+const getFromScrape = async (q, location) => {
 	let linkedin_query = q.replaceAll(' ', '%20');
 	let indeed_query = q.replaceAll(' ', '+');
 
@@ -33,7 +33,7 @@ const getFromScrape = async (q, location, data) => {
 	})
 
 	await browser.close();
-	data[q] = {
+	const data = {
 		'linkedin': linkedin_hasil,
 		'indeed': indeed_hasil,
 		'glints': glints_hasil

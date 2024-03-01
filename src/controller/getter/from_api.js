@@ -1,4 +1,4 @@
-const getFromApi = async (q, location, data) =>{
+const getFromApi = async (q, location) =>{
     // const {body} = req;
     // var search = body.search
     // if (!search){
@@ -12,7 +12,7 @@ const getFromApi = async (q, location, data) =>{
     const response = await fetch(link)
     const d = await response.json()
 
-	data[q]['jobstreet'] = d['solMetadata']['totalJobCount'];
+	const data = { 'jobstreet': d.solMetadata.totalJobCount };
 
 	return data;
     // return res.json({
